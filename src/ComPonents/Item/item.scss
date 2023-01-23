@@ -1,0 +1,143 @@
+@use "../../Sass/Helpers/Variables" as *;
+$border-radius: 10px;
+.item {
+  color: $secondray-color;
+  border-radius: $border-radius;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+  .leftPart {
+    @media (min-width: 768px) {
+      width: 60%;
+    }
+    .img-container {
+      img {
+        aspect-ratio: 16/9;
+        object-position: center;
+        object-fit: cover;
+        border-radius: $border-radius $border-radius 0 0;
+        @media (min-width: 768px) {
+          border-radius: $border-radius 0 0 $border-radius;
+          aspect-ratio: 16/12;
+        }
+        @media (min-width: 1200px) {
+          border-radius: $border-radius 0 0 $border-radius;
+          aspect-ratio: 16/10;
+        }
+      }
+    }
+    .fav-btn {
+      color: $secondray-color;
+      top: 10px;
+      right: 10px;
+      background-color: #fff;
+      width: 25px;
+      height: 25px;
+      border-radius: 15px;
+      transition: $transition;
+
+      &:hover {
+        .notExIcon {
+          color: $main-hover-color;
+        }
+      }
+      .exIcon {
+        color: $main-color;
+      }
+    }
+  }
+  a {
+    color: $secondray-color;
+
+    &:hover {
+      color: $secondray-color;
+    }
+  }
+  .meta-data {
+    padding: 15px 10px;
+
+    background-color: #fff;
+    border-radius: 0 0 $border-radius $border-radius;
+    @media (min-width: 768px) {
+      border-radius: 0 $border-radius $border-radius 0;
+      width: 60%;
+    }
+    .topPart {
+      margin-bottom: 6px;
+      .title {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 0;
+        @media (min-width: 768px) {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+        @media (min-width: 400px) {
+          font-size: 19px;
+        }
+      }
+    }
+    .bottomPart {
+      .labels {
+        .label {
+          font-size: 14px;
+          font-weight: 500;
+          margin-bottom: 2px;
+          @media (min-width: 400px) {
+            font-size: 16px;
+          }
+          &.success {
+            color: $main-hover-color;
+          }
+          .icon {
+            background-color: $main-hover-color;
+            color: #fff;
+            padding: 1px;
+            border-radius: 6px;
+          }
+        }
+      }
+      .offerBadge {
+        color: #fff;
+        padding: 2px 3px;
+        font-size: 11px;
+        font-weight: 500;
+        border-radius: 3px;
+        margin-bottom: 2px;
+        display: inline-block;
+        @media (min-width: 400px) {
+          padding: 3px 6px;
+          font-size: 14px;
+          margin-bottom: 4px;
+        }
+        &.member {
+          background-color: crimson;
+        }
+        &.off {
+          background-color: $main-color;
+        }
+      }
+      .price {
+        text-align: right;
+        .prevPrice {
+          font-size: 14px;
+          font-size: 15px;
+          font-weight: 500;
+          margin-right: 5px;
+        }
+        .currentPrice {
+          font-weight: 700;
+          font-size: 23px;
+        }
+      }
+      .reviews {
+        font-size: 17px;
+        .total {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

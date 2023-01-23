@@ -1,0 +1,102 @@
+@use "../Helpers/Variables" as *;
+.property-main {
+  background-color: $graybg;
+  .property {
+    color: $secondray-color;
+    header {
+      .fav-btn {
+        &:hover {
+          .notExIcon {
+            color: $main-hover-color;
+          }
+        }
+        .exIcon {
+          color: $main-color;
+        }
+      }
+    }
+    .slider {
+      .img-container {
+        height: 300px;
+        img {
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      .slick-prev,
+      .slick-next {
+        &::before {
+          display: none !important;
+        }
+        background-color: $main-color;
+        &:hover {
+          background-color: $main-hover-color;
+        }
+        $size: 35px;
+        width: $size;
+        height: $size;
+        line-height: $size;
+        text-align: center;
+        border-radius: 50%;
+        z-index: 2;
+        color: #fff;
+        display: none !important;
+        @media (min-width: 620px) {
+          display: block !important;
+        }
+      }
+      .slideCount {
+        color: #fff;
+        background-color: rgba($secondray-color, 0.5);
+        padding: 3px 5px;
+        border-radius: 11px;
+        position: absolute;
+        z-index: 2;
+        bottom: 14px;
+        right: 14px;
+      }
+    }
+    .nav-tabs {
+      .nav-link {
+        color: $secondray-color !important;
+        font-weight: 500;
+        &.active {
+          color: $main-color !important;
+        }
+      }
+    }
+    .tab-content {
+      .overView-metadata {
+        flex: 2;
+        .name {
+          font-size: 26px;
+          font-weight: 700;
+          margin-bottom: 1px;
+          @media (min-width: 768px) {
+            font-size: 35px;
+          }
+        }
+        .stars {
+          color: $main-color;
+        }
+      }
+      .map-sec {
+        flex: 1;
+      }
+      .amenities {
+        .title {
+          font-weight: 700;
+          font-size: 30px;
+        }
+        .list {
+          list-style-type: disc;
+        }
+      }
+      .heading {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 7px;
+      }
+    }
+  }
+}

@@ -1,0 +1,230 @@
+@use "../../Sass/Helpers/Variables" as *;
+$border-radius: 15px;
+$lg-border-radius: 45px;
+$searchPage-border-radius: 5px;
+$box-shadow: 0px 1px 8px rgb(153 153 153 / 88%);
+.searchToggle {
+  color: $secondray-color;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 1px 10px;
+  background-color: $third-color;
+  border-radius: $searchPage-border-radius;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  .location {
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+}
+.searchForm {
+  background-color: $third-color;
+  &.landingPage {
+    border: 1px solid #ddd;
+
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    @media (min-width: 992px) {
+      border-radius: $lg-border-radius;
+    }
+    .formGroup .toggle-btn {
+      padding: 15px 20px;
+      border-radius: $border-radius;
+      @media (min-width: 992px) {
+        border-radius: $lg-border-radius;
+      }
+    }
+    .submitBtn {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      @media (min-width: 992px) {
+        width: auto !important;
+        border-radius: $lg-border-radius;
+        padding: 17px 48px;
+        margin-right: 12px;
+      }
+    }
+  }
+  &.searchPage {
+    box-shadow: $box-shadow;
+    border-radius: $searchPage-border-radius;
+    .formGroup .toggle-btn {
+      padding: 4px 10px;
+      border-radius: $searchPage-border-radius;
+    }
+  }
+  .formGroup {
+    border-bottom: 1px solid #ddd;
+    flex: 1;
+
+    @media (min-width: 992px) {
+      border-bottom: 0;
+    }
+    @media (min-width: 992px) {
+      &:first-child::after,
+      &:nth-child(2)::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 20px;
+        background-color: #ddd;
+      }
+    }
+    .toggle-btn {
+      background-color: transparent !important;
+      width: 100%;
+      transition: none !important;
+      &:hover {
+        border-color: transparent;
+        background-color: transparent;
+      }
+      &:not(&.error) {
+        border: none !important;
+      }
+      &[aria-expanded="true"] {
+        box-shadow: 3px 2px 10px #ededed;
+      }
+      .icon {
+        margin-right: 12px;
+        color: $text-color;
+      }
+      .renderGroup {
+        label {
+          color: $secondray-color;
+          display: block;
+          line-height: 27px;
+          text-align: left;
+          font: {
+            weight: 600;
+            size: 15px;
+          }
+        }
+      }
+    }
+    .modal-dropDown {
+      transform: translate(0) !important;
+      inset: 120% auto auto 0 !important;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+      z-index: 2;
+      background-color: #fff;
+      width: 100%;
+      @media (min-width: 992px) {
+        width: 360px;
+      }
+      &.search-modal {
+        min-height: 300px;
+        input {
+          padding: 15px 20px;
+        }
+        .spinner circle {
+          fill: $main-color;
+        }
+        .search-list {
+          max-height: 380px;
+          overflow-y: auto;
+          .search-item {
+            padding: 10px 20px;
+            transition: $transition;
+            &:hover {
+              background-color: rgba($text-color, 0.2);
+            }
+            .icon {
+              color: $secondray-color;
+              margin-right: 12px;
+            }
+            .item-regionNames {
+              text-align: left;
+              font-size: 15px;
+              overflow: hidden;
+              .item-primaryName {
+                color: $secondray-color;
+                line-height: 17px;
+                font-weight: 700;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+              .item-secondaryName {
+                color: $text-color;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+        }
+      }
+      &.date-range {
+        .rdrMonth {
+          width: 100% !important;
+        }
+      }
+      &.travellers-modal {
+        padding: 20px 15px 15px;
+        .rooms {
+          .room {
+            .room-heading {
+              color: $secondray-color;
+              font: {
+                size: 16px;
+                weight: 700;
+              }
+            }
+            .room-item {
+              .room-item-label {
+                color: $text-color;
+                font : {
+                  size: 15px;
+                  weight: 500;
+                }
+              }
+              .activites {
+                color: $secondray-color;
+                button {
+                  width: 32px;
+                  height: 32px;
+                  line-height: 26px;
+                  border: 1px solid $text-color;
+                  font : {
+                    size: 21px;
+                    weight: 500;
+                  }
+                  &:disabled {
+                    border-color: rgba($text-color, 0.4);
+                  }
+                }
+                .num {
+                  margin: 0 15px;
+                  width: 8px;
+                  font: {
+                    size: 15px;
+                    weight: 500;
+                  }
+                }
+              }
+            }
+            .children {
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              li {
+                width: calc(50% - 5px);
+                select:focus {
+                  box-shadow: none !important;
+                  border-width: 2px;
+                  border-color: $text-color !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use "../../Sass/Helpers/Variables" as *;
+.header {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  .nav {
+    li {
+      margin-left: 20px;
+      .nav-item {
+        color: $secondray-color;
+        font-weight: 700;
+        letter-spacing: $letter-spacing;
+        transition: $transition;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}

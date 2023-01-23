@@ -1,0 +1,98 @@
+@use "../Helpers/Variables" as *;
+.searchMain {
+  background-color: $graybg;
+  color: $secondray-color;
+  .results-sec {
+    .wraper {
+      aside {
+        width: 20%;
+        margin-right: $wraper-gap;
+      }
+      .widget {
+        flex: 1;
+        @media (min-width: 992px) {
+          width: calc(80% - $wraper-gap);
+        }
+        header {
+          .mobile-models-btns {
+            .btn-container {
+              button {
+                box-shadow: $btn-box-shadow;
+
+                color: $main-color;
+                font-weight: 700;
+                font-size: 13px;
+                @media (min-width: 400px) {
+                  font-size: 16px;
+                }
+              }
+              &:first-of-type {
+                flex: 2;
+              }
+              &:last-child {
+                flex: 1;
+              }
+            }
+          }
+
+          select {
+            width: 320px !important;
+            height: 54px !important;
+            box-shadow: $box-shadow;
+            border: none;
+            &:focus {
+              border-color: $main-color;
+              box-shadow: none;
+            }
+          }
+        }
+        .properties-boxes {
+          .property {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+    .deleteFilter {
+      border: 2px solid $main-color;
+      background-color: rgba($main-color, 0.2);
+      font-size: 14px;
+      font-weight: 500;
+      color: $main-color;
+      padding: 6px 10px;
+      .icon {
+        path {
+          stroke: $main-color;
+        }
+      }
+    }
+    .removeAll {
+      color: $main-color;
+      text-decoration: underline;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  .to-top {
+    right: 0;
+    transform: translateX(100%);
+    bottom: 5%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s linear, background-color 0.2s linear;
+
+    color: $secondray-color;
+    background-color: rgba($main-color, 0.6);
+    width: 50px;
+    height: 50px;
+    &.show {
+      right: 1%;
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    &:hover {
+      background-color: $main-color;
+    }
+  }
+}

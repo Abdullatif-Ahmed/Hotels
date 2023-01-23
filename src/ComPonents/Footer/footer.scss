@@ -1,0 +1,64 @@
+@use "../../Sass/Helpers/Variables" as *;
+
+footer {
+  .top-footer {
+    background-color: $secondray-color;
+    padding: $sec-padding;
+    color: $third-color;
+    .footer-heading {
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .text {
+      line-height: $line-height;
+      color: $third-color;
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+    ul {
+      &.social {
+        li {
+          margin-right: 15px;
+          a {
+            display: block;
+            text-align: center;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            background-color: rgba($text-color, 0.3);
+            transition: $transition;
+            border-radius: 50%;
+            color: $third-color;
+            &:hover {
+              background-color: $third-color;
+              color: $secondray-color;
+            }
+          }
+        }
+      }
+      &.footer-links {
+        li {
+          margin-bottom: 12px;
+          a {
+            text-transform: capitalize;
+            color: $third-color;
+            font: {
+              size: 18px;
+              weight: 400;
+            }
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  .bottom-footer {
+    background-color: $darker-secondray-color;
+    color: $third-color;
+    a {
+      color: $main-color;
+    }
+  }
+}

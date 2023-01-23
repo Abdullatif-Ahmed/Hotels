@@ -1,0 +1,139 @@
+@use "../Helpers/Variables" as *;
+@use "../Helpers/Mixins" as *;
+.landing-widget {
+  padding: 60px 0 150px;
+  background-image: url(../../Assets/heroImg.webp);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &::before {
+    @include overlay(rgba($secondray-color, 0.4));
+  }
+  @media (min-width: 768px) {
+    padding: 120px 0;
+  }
+  .landing-content {
+    z-index: 1;
+    margin-bottom: 25px;
+    .landing-heading {
+      color: $third-color;
+      font-size: 55px;
+      font-weight: 700;
+      @media (min-width: 992px) {
+        font-size: 75px;
+      }
+    }
+    .text {
+      color: $third-color;
+      font-size: 17px;
+      @media (min-width: 992px) {
+        font-size: 20px;
+      }
+    }
+  }
+}
+.seacrch-widget {
+  margin-top: -138px;
+  z-index: 1;
+  @media (min-width: 992px) {
+    margin-top: -44px;
+  }
+}
+.analytics-widget {
+  padding: $sec-padding;
+  background-color: $third-color;
+  .analytics-box {
+    position: relative;
+    &:first-child::before,
+    &:nth-child(3)::before {
+      @include seprator();
+    }
+    @media (min-width: 768px) {
+      &:not(&:last-child)::before {
+        @include seprator();
+      }
+    }
+    .analytics-heading {
+      color: $secondray-color;
+      font-weight: 700;
+      margin-bottom: 13px;
+    }
+  }
+}
+.boxes-widget {
+  background-color: $graybg;
+  padding: $sec-padding;
+  .sec-info {
+    color: $text-color;
+    font-size: 21px;
+    font-weight: 400;
+    max-width: 550px;
+    padding-top: 20px;
+    margin-bottom: 45px;
+  }
+  .box {
+    background-color: $third-color;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 2px 11px 0 rgba($secondray-color, 0.1);
+    transition: $transition;
+    &:hover {
+      transform: translateY(-20px);
+    }
+    .icon-container {
+      background-color: rgba($main-color, 0.2);
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      .icon {
+        color: $main-color;
+      }
+    }
+    .box-heading {
+      color: $secondray-color;
+      font-size: 19px;
+      font-weight: 500;
+      margin-bottom: 13px;
+    }
+    .text {
+      line-height: 27px;
+      font-weight: 400;
+    }
+  }
+}
+.icons-widget {
+  background-color: #f3f8fc;
+  padding: $sec-padding;
+  .icon-container {
+    background-color: $secondray-color;
+    width: 65px;
+    line-height: 60px;
+    height: 65px;
+    .icon {
+      color: $main-color;
+    }
+  }
+  .heading {
+    color: $main-color;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+.sec-heading {
+  color: #303443;
+  font-size: 30px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  position: relative;
+  margin: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background-color: $main-color;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
