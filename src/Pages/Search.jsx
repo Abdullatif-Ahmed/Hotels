@@ -186,15 +186,19 @@ const Search = () => {
                           <li key={fl.val} className="me-2">
                             <button
                               className="deleteFilter  rounded-pill d-flex justify-content-between align-items-center"
-                              onClick={() => remove(fl.id, fl.val)}
+                              onClick={() =>
+                                params.has(fl.id) ? remove(fl.id, fl.val) : ""
+                              }
                               aria-label="delete this filter"
+                              disabled={!params.has(fl.id)}
                             >
                               {fl.name}
                               <GrFormClose size={19} className="ms-2 icon" />
                             </button>
                           </li>
                         ))}
-                        {filters.length !== 0 && (
+                        {filters.filter((f) => params.has(f.id)).length !==
+                          0 && (
                           <li>
                             <button
                               onClick={() =>
