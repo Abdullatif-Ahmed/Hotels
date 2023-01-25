@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/Booking/static/css/main.7c93a773.css",
-    "main.js": "/Booking/static/js/main.b840e35c.js",
+    "main.js": "/Booking/static/js/main.b9555a15.js",
     "static/css/357.26552def.chunk.css": "/Booking/static/css/357.26552def.chunk.css",
     "static/js/357.a1347e6c.chunk.js": "/Booking/static/js/357.a1347e6c.chunk.js",
     "static/css/627.9ae9ed3b.chunk.css": "/Booking/static/css/627.9ae9ed3b.chunk.css",
-    "static/js/627.9ec87ef3.chunk.js": "/Booking/static/js/627.9ec87ef3.chunk.js",
+    "static/js/627.f16df874.chunk.js": "/Booking/static/js/627.f16df874.chunk.js",
     "static/css/219.616872d2.chunk.css": "/Booking/static/css/219.616872d2.chunk.css",
     "static/js/219.78ce2869.chunk.js": "/Booking/static/js/219.78ce2869.chunk.js",
     "static/js/353.5d6e44f9.chunk.js": "/Booking/static/js/353.5d6e44f9.chunk.js",
@@ -27,11 +27,11 @@
     "static/media/slick.woff": "/Booking/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Booking/index.html",
     "main.7c93a773.css.map": "/Booking/static/css/main.7c93a773.css.map",
-    "main.b840e35c.js.map": "/Booking/static/js/main.b840e35c.js.map",
+    "main.b9555a15.js.map": "/Booking/static/js/main.b9555a15.js.map",
     "357.26552def.chunk.css.map": "/Booking/static/css/357.26552def.chunk.css.map",
     "357.a1347e6c.chunk.js.map": "/Booking/static/js/357.a1347e6c.chunk.js.map",
     "627.9ae9ed3b.chunk.css.map": "/Booking/static/css/627.9ae9ed3b.chunk.css.map",
-    "627.9ec87ef3.chunk.js.map": "/Booking/static/js/627.9ec87ef3.chunk.js.map",
+    "627.f16df874.chunk.js.map": "/Booking/static/js/627.f16df874.chunk.js.map",
     "219.616872d2.chunk.css.map": "/Booking/static/css/219.616872d2.chunk.css.map",
     "219.78ce2869.chunk.js.map": "/Booking/static/js/219.78ce2869.chunk.js.map",
     "353.5d6e44f9.chunk.js.map": "/Booking/static/js/353.5d6e44f9.chunk.js.map",
@@ -48,6 +48,6 @@
   },
   "entrypoints": [
     "static/css/main.7c93a773.css",
-    "static/js/main.b840e35c.js"
+    "static/js/main.b9555a15.js"
   ]
 }
