@@ -38,7 +38,8 @@ const Filters = ({ data, sendFilters, lg }) => {
             fl.primary === "Star rating" ||
             fl.primary === "Property type" ||
             fl.primary === "Hotels.com® Rewards" ||
-            fl.primary === "Your budget" ? (
+            fl.primary === "Your budget" ||
+            fl.primary === "Traveler experience" ? (
               ""
             ) : (
               <fieldset
