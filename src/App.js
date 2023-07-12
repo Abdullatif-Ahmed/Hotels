@@ -1,4 +1,4 @@
-import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import Footer from "./ComPonents/Footer/Footer";
 import Header from "./ComPonents/Header/Header";
@@ -21,7 +21,7 @@ const SignUp = lazy(() => import("./Pages/SignUp"));
 function App() {
   return (
     <AuthProvider>
-      <HashRouter>
+      <BrowserRouter>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Suspense
             fallback={
@@ -55,7 +55,7 @@ function App() {
             <Footer />
           </Suspense>
         </ErrorBoundary>
-      </HashRouter>
+      </BrowserRouter>
     </AuthProvider>
   );
 }
