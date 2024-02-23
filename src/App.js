@@ -29,7 +29,7 @@ function App() {
                 className="d-flex align-items-center justify-content-center flex-column"
                 style={{ height: "100vh" }}
               >
-                <img src={logo} alt="logo" width="110" height="33" />
+                <img src={logo} alt="logo" width="200" height="35" />
                 <ThreeDots
                   height="80"
                   width="80"

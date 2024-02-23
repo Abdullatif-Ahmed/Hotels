@@ -9,7 +9,7 @@ import CountUp from "react-countup";
 import SearchForm from "../ComPonents/Search Form/Search Form";
 
 const Home = () => {
-  document.title = "Home - Booking";
+  document.title = "Home - Hotels";
 
   return (
     <main>
@@ -32,27 +32,27 @@ const Home = () => {
         <Container>
           <Row>
             <Col xs="6" md="3" className="mb-5 mb-md-0 analytics-box">
-              <h3 className="analytics-heading">
+              <h2 className="analytics-heading">
                 <CountUp end={400} duration={2} />+
-              </h3>
+              </h2>
               <p className="text">Room & Suites</p>
             </Col>
             <Col xs="6" md="3" className="mb-5 mb-md-0 analytics-box">
-              <h3 className="analytics-heading">
+              <h2 className="analytics-heading">
                 <CountUp end={90} duration={2} />+
-              </h3>
+              </h2>
               <p className="text">Restaurant</p>
             </Col>
             <Col xs="6" md="3" className="mb-5 mb-md-0 analytics-box">
-              <h3 className="analytics-heading">
+              <h2 className="analytics-heading">
                 <CountUp end={160} duration={2} />+
-              </h3>
+              </h2>
               <p className="text">Exceptional Food</p>
             </Col>
             <Col xs="6" md="3" className="mb-5 mb-md-0 analytics-box">
-              <h3 className="analytics-heading">
+              <h2 className="analytics-heading">
                 <CountUp end={40} duration={2} />+
-              </h3>
+              </h2>
               <p className="text">Destination</p>
             </Col>
           </Row>

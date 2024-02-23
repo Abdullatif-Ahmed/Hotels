@@ -25,22 +25,22 @@ const Footer = () => {
                 </p>
                 <ul className="social d-flex align-items-center ">
                   <li>
-                    <a href="/">
+                    <a href="/" aria-label="facebook">
                       <FaFacebookF size="20" className="icon" />
                     </a>
                   </li>
                   <li>
-                    <a href="/">
+                    <a href="/" aria-label="twitter">
                       <FaTwitter size="20" className="icon" />
                     </a>
                   </li>
                   <li>
-                    <a href="/">
+                    <a href="/" aria-label="instgram">
                       <FaInstagram size="20" className="icon" />
                     </a>
                   </li>
                   <li>
-                    <a href="/">
+                    <a href="/" aria-label="linkedin">
                       <FaLinkedinIn size="20" className="icon" />
                     </a>
                   </li>
@@ -48,7 +48,7 @@ const Footer = () => {
               </div>
             </Col>
             <Col xs="12" md="6" lg="3" className="mb-5 mb-lg-0">
-              <h5 className="footer-heading text-uppercase mb-4">services</h5>
+              <h3 className="footer-heading text-uppercase mb-4">services</h3>
               <ul className="footer-links">
                 <li>
                   <a href="/">delicious food</a>
@@ -68,9 +68,9 @@ const Footer = () => {
               </ul>
             </Col>
             <Col xs="12" md="6" lg="3" className="mb-5 mb-lg-0">
-              <h5 className="footer-heading text-uppercase mb-4">
+              <h3 className="footer-heading text-uppercase mb-4">
                 important link
-              </h5>
+              </h3>
               <ul className="footer-links">
                 <li>
                   <a href="/">about us</a>
@@ -90,7 +90,7 @@ const Footer = () => {
               </ul>
             </Col>
             <Col xs="12" md="6" lg="3">
-              <h5 className="footer-heading text-uppercase mb-4">support</h5>
+              <h3 className="footer-heading text-uppercase mb-4">support</h3>
               <ul className="footer-links">
                 <li>
                   <a href="/">help center</a>

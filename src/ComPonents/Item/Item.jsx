@@ -25,6 +25,7 @@ const Item = ({ item }) => {
           </div>
         </Link>
         <button
+          aria-label={existing ? "unsave" : "save"}
           className="position-absolute fav-btn"
           onClick={() => {
             return user

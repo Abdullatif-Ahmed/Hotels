@@ -72,7 +72,7 @@ const Property = () => {
         <BiChevronLeft size={18} />
       </span>
     ),
-    beforeChange: (cur, next) => setUpdateSlideCount(next + 1),
+    beforeChange: (_, next) => setUpdateSlideCount(next + 1),
   };
   useEffect(() => {
     if (data?.data?.propertyInfo.summary.name) {

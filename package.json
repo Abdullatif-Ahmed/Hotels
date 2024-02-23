@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
     "date-fns": "^2.29.3",
@@ -18,7 +19,7 @@
     "react-placeholder-loading": "^0.5.30",
     "react-router": "^6.4.4",
     "react-router-dom": "^6.4.4",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
     "sass": "^1.56.1",
     "slick-carousel": "^1.8.1"
