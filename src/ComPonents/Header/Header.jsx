@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../Assets/logo.webp";
 import { FaUserCircle } from "react-icons/fa";
 import { BiTrip } from "react-icons/bi";
@@ -12,22 +12,16 @@ import WishList from "../WishList/WishList";
 const Header = () => {
   const location = useLocation();
   const [openWishlist, setOpenWishList] = useState(false);
-  const navigate = useNavigate();
   const { user, logOut } = useContext(AuthContext);
   async function handleLogOut() {
-    try {
-      await logOut();
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-    }
+    await logOut();
   }
   return (
-    <header className="py-4 header">
+    <header className="py-3 header">
       <Container>
         <div className="d-flex justify-content-between align-items-center">
           <Link to="/">
-            <img src={logo} alt="Booking" width="110" height="33" />
+            <img src={logo} alt="Booking" width="200" height="35" />
           </Link>
           <nav className="ms-auto nav">
             <ul className="d-flex align-items-center">
@@ -42,7 +36,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  to="#"
+                  to="/"
                   className="d-none d-md-inline-block fs-6 text-capitalize nav-item"
                 >
                   trips

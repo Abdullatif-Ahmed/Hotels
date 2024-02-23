@@ -74,7 +74,6 @@ const Search = () => {
       },
     })
   );
-  console.log(data);
   const q = params.get("location");
   useEffect(() => {
     document.title = q;

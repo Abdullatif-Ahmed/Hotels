@@ -52,6 +52,8 @@ const AuthProvider = ({ children }) => {
         onSnapshot(doc(db, "users", currentUser.uid), (doc) => {
           setSavedHotels(doc.data().savedHotels);
         });
+      } else {
+        setUser(null);
       }
     });
     return () => {

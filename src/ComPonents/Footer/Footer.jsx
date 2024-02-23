@@ -17,7 +17,7 @@ const Footer = () => {
             <Col xs="12" md="6" lg="3" className="mb-5 mb-lg-0">
               <div className="content">
                 <div className="logo-container mb-3">
-                  <img src={logo} alt="Booking" width="140" height="42" />
+                  <img src={logo} alt="Booking" width="200" height="35" />
                 </div>
                 <p className="text">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. At
