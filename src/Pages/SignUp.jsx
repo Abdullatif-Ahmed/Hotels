@@ -11,7 +11,7 @@ import { useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../firebaseContext";
 import { db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
-const email_regx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const email_regx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 const pass_regx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&#]).{7,20}$/;
 
 const SignUp = () => {
