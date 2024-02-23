@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../Assets/logo.webp";
 import { FaUserCircle } from "react-icons/fa";
 import { BiTrip } from "react-icons/bi";
@@ -10,6 +10,7 @@ import { AuthContext } from "../../firebaseContext";
 import WishList from "../WishList/WishList";
 
 const Header = () => {
+  const location = useLocation();
   const [openWishlist, setOpenWishList] = useState(false);
   const navigate = useNavigate();
   const { user, logOut } = useContext(AuthContext);
@@ -60,11 +61,16 @@ const Header = () => {
                 <li>
                   <Link
                     to="/login"
+                    state={location.pathname + location.search}
                     className="d-none d-md-inline-block fs-6 text-capitalize nav-item"
                   >
                     sign in
                   </Link>
-                  <Link to="/login" className="d-md-none nav-item">
+                  <Link
+                    to="/login"
+                    state={location.pathname + location.search}
+                    className="d-md-none nav-item"
+                  >
                     <FaUserCircle size="25" />
                   </Link>
                 </li>

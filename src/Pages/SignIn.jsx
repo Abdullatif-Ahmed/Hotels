@@ -7,10 +7,11 @@ import {
   Spinner,
 } from "react-bootstrap";
 import { BiErrorCircle } from "react-icons/bi";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../firebaseContext";
 
 const SignIn = () => {
+  const location = useLocation();
   const { logIn } = useContext(AuthContext);
   const [submitLoading, setSubmitLoading] = useState(false);
   const [errorM, setErrorM] = useState("");
@@ -24,7 +25,7 @@ const SignIn = () => {
     setSubmitLoading(true);
     try {
       await logIn(emailInp.current.value, passInp.current.value);
-      navigate("/", { replace: true });
+      navigate(location.state || "/", { replace: true });
     } catch (error) {
       setErrorM(error.message);
       setSubmitLoading(false);
@@ -97,7 +98,7 @@ const SignIn = () => {
               you don't have an acount{" "}
               <button
                 className="btn1 rounded"
-                onClick={() => navigate("/signup")}
+                onClick={() => navigate("/signup", { state: location.state })}
               >
                 Sign up
               </button>

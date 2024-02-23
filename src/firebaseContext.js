@@ -47,19 +47,18 @@ const AuthProvider = ({ children }) => {
   }
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+      if (currentUser) {
+        setUser(currentUser);
+        onSnapshot(doc(db, "users", currentUser.uid), (doc) => {
+          setSavedHotels(doc.data().savedHotels);
+        });
+      }
     });
     return () => {
       unsubscribe();
     };
-  });
-  useEffect(() => {
-    if (user?.uid) {
-      onSnapshot(doc(db, "users", user?.uid), (doc) => {
-        setSavedHotels(doc.data().savedHotels);
-      });
-    }
-  });
+  }, []);
+
   return (
     <AuthContext.Provider
       value={{ signUp, logOut, logIn, user, savedHotels, handleSave }}

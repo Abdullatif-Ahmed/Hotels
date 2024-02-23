@@ -7,8 +7,11 @@ import { TbMap2 } from "react-icons/tb";
 import { BsChatLeftDots, BsPatchCheck } from "react-icons/bs";
 import CountUp from "react-countup";
 import SearchForm from "../ComPonents/Search Form/Search Form";
+import { useLocation } from "react-router";
 
 const Home = () => {
+  const location = useLocation();
+  console.log(location);
   document.title = "Home - Booking";
 
   return (

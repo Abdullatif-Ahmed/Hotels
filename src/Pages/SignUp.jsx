@@ -7,7 +7,7 @@ import {
   Spinner,
 } from "react-bootstrap";
 import { BiErrorCircle } from "react-icons/bi";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../firebaseContext";
 import { db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
@@ -15,6 +15,7 @@ const email_regx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const pass_regx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&#]).{7,20}$/;
 
 const SignUp = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const { signUp } = useContext(AuthContext);
   const [emailVal, setEmailVal] = useState("");
@@ -48,10 +49,8 @@ const SignUp = () => {
         setDoc(doc(db, "users", newUser?.user.uid), {
           savedHotels: [],
         });
-        setEmailVal("");
-        setPassVal("");
-        setRpassVal("");
-        navigate("/", { replace: true });
+
+        navigate(location.state || "/", { replace: true });
       } catch (error) {
         if (error.message) {
           setErrorM(error.message);
@@ -63,6 +62,7 @@ const SignUp = () => {
       }
     } else {
       setErrorM("invalid Entry");
+      errorRef.current.focus();
     }
   }
   return (

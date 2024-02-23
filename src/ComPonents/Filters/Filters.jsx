@@ -65,7 +65,7 @@ const Filters = ({ data, sendFilters, lg }) => {
                         name={fl.primary}
                         id={`${fl.primary}_${fm.value}`}
                         disabled={fm.disabled}
-                        checked={fm.selected}
+                        defaultChecked={fm.selected}
                         value={fm.value}
                         onChange={(e) => {
                           e.target.checked === true
@@ -105,7 +105,7 @@ const Filters = ({ data, sendFilters, lg }) => {
                         name={fl.primary}
                         id={`${fl.primary}_${fm.value}`}
                         disabled={fm.disabled}
-                        checked={fm.selected}
+                        defaultChecked={fm.selected}
                         value={fm.value}
                         onChange={(e) => {
                           e.target.checked === true &&
@@ -144,7 +144,7 @@ const Filters = ({ data, sendFilters, lg }) => {
                           name={fl.primary}
                           id={`${fl.primary}_${fm.value}`}
                           disabled={fm.disabled}
-                          checked={fm.selected}
+                          defaultChecked={fm.selected}
                           value={fm.value}
                           onChange={(e) => {
                             e.target.checked === true &&

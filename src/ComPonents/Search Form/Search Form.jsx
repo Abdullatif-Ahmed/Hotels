@@ -32,7 +32,9 @@ const SearchForm = ({ searchPage }) => {
   const navigate = useNavigate();
   const [params] = useSearchParams();
   const [searchVal, setSearchVal] = useState(params.get("location") || "");
-  const [selectedLocation, setSelectedLocation] = useState(null);
+  const [selectedLocation, setSelectedLocation] = useState(
+    searchPage ? "" : null
+  );
   const [locationError, setLocationError] = useState(false);
   const [openTreavellers, setOpenTravellers] = useState(false);
   const [openLocationMenu, setOpenLocationMenu] = useState(false);
