@@ -5,7 +5,7 @@ import useFetch from "../Hooks/useFetch";
 import { AiOutlineHeart, AiFillStar, AiFillHeart } from "react-icons/ai";
 import Slider from "react-slick";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
-import icons from "react-icons/md";
+import * as icons from "react-icons/md";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
