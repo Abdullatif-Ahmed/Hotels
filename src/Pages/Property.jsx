@@ -5,28 +5,7 @@ import useFetch from "../Hooks/useFetch";
 import { AiOutlineHeart, AiFillStar, AiFillHeart } from "react-icons/ai";
 import Slider from "react-slick";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
-import { FaTemperatureHigh } from "react-icons/fa";
-import {
-  MdLocalAirport,
-  MdLocalLaundryService,
-  MdDone,
-  MdFamilyRestroom,
-  MdBusinessCenter,
-  MdRoomService,
-  MdAccessible,
-  MdSmokeFree,
-  MdComputer,
-  MdPets,
-  MdFitnessCenter,
-  MdPool,
-  MdLocalDining,
-  MdHotTub,
-  MdAcUnit,
-  MdWifi,
-  MdLocalParking,
-  MdUmbrella,
-  MdFreeBreakfast,
-} from "react-icons/md";
+import icons from "react-icons/md";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -74,6 +53,7 @@ const Property = () => {
     ),
     beforeChange: (_, next) => setUpdateSlideCount(next + 1),
   };
+
   useEffect(() => {
     if (data?.data?.propertyInfo.summary.name) {
       document.title = data?.data?.propertyInfo.summary.name;
@@ -227,37 +207,7 @@ const Property = () => {
                                 <IconContext.Provider
                                   value={{ size: 20, className: "me-2" }}
                                 >
-                                  {an.icon.id === "local_parking" ? (
-                                    <MdLocalParking />
-                                  ) : an.icon.id === "wifi" ? (
-                                    <MdWifi />
-                                  ) : an.icon.id === "airport_shuttle" ? (
-                                    <MdLocalAirport />
-                                  ) : an.icon.id === "ac_unit" ? (
-                                    <MdAcUnit />
-                                  ) : an.icon.id === "local_laundry_service" ? (
-                                    <MdLocalLaundryService />
-                                  ) : an.icon.id === "hot_tub" ? (
-                                    <MdHotTub />
-                                  ) : an.icon.id === "temperature" ? (
-                                    <FaTemperatureHigh />
-                                  ) : an.icon.id === "smoke_free" ? (
-                                    <MdSmokeFree />
-                                  ) : an.icon.id === "local_dining" ? (
-                                    <MdLocalDining />
-                                  ) : an.icon.id === "computer" ? (
-                                    <MdComputer />
-                                  ) : an.icon.id === "pets" ? (
-                                    <MdPets />
-                                  ) : an.icon.id === "fitness_center" ? (
-                                    <MdFitnessCenter />
-                                  ) : an.icon.id === "pool" ? (
-                                    <MdPool />
-                                  ) : an.icon.id === "free_breakfast" ? (
-                                    <MdFreeBreakfast />
-                                  ) : (
-                                    ""
-                                  )}
+                                  <Icon id={an.icon.id} />
                                 </IconContext.Provider>
                                 {an.text}
                               </li>
@@ -304,27 +254,7 @@ const Property = () => {
                                 <IconContext.Provider
                                   value={{ size: 20, className: "me-3" }}
                                 >
-                                  {li.icon.id === "done" ? (
-                                    <MdDone />
-                                  ) : li.icon.id === "wifi" ? (
-                                    <MdWifi />
-                                  ) : li.icon.id === "local_parking" ? (
-                                    <MdLocalParking />
-                                  ) : li.icon.id === "local_dining" ? (
-                                    <MdLocalDining />
-                                  ) : li.icon.id === "family_friendly" ? (
-                                    <MdFamilyRestroom />
-                                  ) : li.icon.id === "lob_activities" ? (
-                                    <MdUmbrella />
-                                  ) : li.icon.id === "business_center" ? (
-                                    <MdBusinessCenter />
-                                  ) : li.icon.id === "room_service" ? (
-                                    <MdRoomService />
-                                  ) : li.icon.id === "accessible" ? (
-                                    <MdAccessible />
-                                  ) : (
-                                    <MdDone />
-                                  )}
+                                  <Icon id={id.icon.id} />
                                 </IconContext.Provider>
                                 <div>
                                   <h3 className="heading">{li.header.text}</h3>
@@ -356,3 +286,14 @@ const Property = () => {
   );
 };
 export default memo(Property);
+function Icon({ id }) {
+  const iconId =
+    "Md" +
+    id
+      .split("_")
+      .map((n) => n[0].toUpperCase() + n.slice(1))
+      .join("");
+
+  const Icon = icons[iconId] || icons.MdHotel;
+  return <Icon />;
+}
